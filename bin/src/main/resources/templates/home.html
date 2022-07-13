@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
+	<head>
+	 <title > Welcome to our site!👾 </title>
+	</head>
+	<body>
+		<!--Canvas of the whole site-->
+		<div id="canvas" class="container"  layout:fragment="content" >
+			<!--Image for the banner of the site & site title-->
+			<div id="site-banner" class="d-flex justify-content-center align-items-start">
+				<!--<h1 class="title"> {Site Title Name} </h1>-->
+			</div>
+			<!--User's Title'-->
+			
+			<div class="bottom-section">
+				<div id="user-msg-section" class="row">
+					<div class="col">
+						<h2 class="user-title"> Welcome, <ef class="title"> {firstName} </ef></h2>
+					</div>
+				</div>
+			
+			<!--Site Information-->
+				<div id="site-info-section" class="row">
+					<div class="col">
+					   <h3 id="ab-title" class="sub-title">About Us</h3>
+					   <div id="desc-left" class="sub-desc">
+					   	 <p>
+					   	 	Lorem ipsum dolor sit amet, id sed assum sonet tacimates, et affert petentium inciderint vel. Solet mnesarchum has an. Id eum quas qualisque vulputate, est in essent inciderint cotidieque. Decore semper appellantur at nam, appareat scripserit vim an, eos modo sententiae at.
+					   	 	Vim id erant option repudiare, mea ex facete inciderint. Persecuti vituperatoribus ex mei. Nominavi eligendi per cu, nam ne nostro aliquando, repudiare voluptatum an ius. Est at labitur evertitur, te rationibus elaboraret qui. 
+					   	 	Ne eam persius civibus signiferumque, laoreet forensibus suscipiantur ne pri. Has ex decore percipit disputationi, adhuc porro mazim in his. Ei mei perpetua iudicabit, ne quidam iisque admodum duo. Dicant inermis officiis duo et, ut vidit zril sensibus pri. Tractatos forensibus interesset has in.
+					   	 </p>
+					   </div>
+					</div>
+					<div class="col">
+					   <h3 id="as-title" class="sub-title">Authors </h3>
+					   <div id="desc-right" class="sub-desc">
+					   	 <ul class="d-flex justify-content-center align-items-between author-space">
+					   	   <li>Arin</li>
+					   	   <li>Joshua</li>
+					   	 </ul>
+					   </div>
+					</div>
+				</div>			  
+			</div>
+		</div>
+	</body>
+</html>

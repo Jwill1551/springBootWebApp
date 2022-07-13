@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+:root{
+	--main-Bg-Color: #FFF0F5;
+	--optional-Nav-Color: darkslategray;
+	--accent-Color: #32566F;
+	--primary-Color: lightskyblue;
+	--secondary-Color: lightcoral;
+	--optional-Color: lightpink;
+	--opacityBackground: rgba(231,231,231, 0.8);
+}
+
+*{
+	margin: 0%;
+	padding: 0px;
+}
+
+body{
+     font-family: 'Roboto' !important;
+     background-color: var(--main-Bg-Color);
+}
+
+#canvas {
+	margin: 0%;
+	padding: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+/*Header Format*/
+.navbar-style{
+	background-color: var(--accent-Color);
+	font-family: 'Roboto' !important;
+}
+
+.navbar-style a{
+	text-decoration: none;
+	color: var(--main-Bg-Color)
+}
+
+.navbar-style a:hover {
+	color: var(--primary-Color)
+}
+
+  .nav-title {
+	text-align: center;
+  }
+
+	.search-form {
+		background: none;
+		box-shadow: none;
+	}
+	
+		.nav-searchbar-style {
+			border: var(--accent-Color) 2px solid;
+			outline: none;
+			border-radius: 10px;
+		}
+		
+		.nav-searchbar-style:focus {
+			border: var(--primary-Color) 2px solid;
+		}
+	
+		.btn-outline-style {
+			border: var(--primary-Color) 2px solid;
+			color: var(--primary-Color);
+			border-radius: 10px;
+		}
+		
+		.btn-outline-style:hover {
+			background: var(--primary-Color);
+		}
+		
+.dm-style {
+	background: var(--accent-Color);
+}
+
+	.dm-item-style {
+		color: white;
+	}
+	
+	.dm-item-style:hover {
+		color: var(--accent-Color) !important;
+	}
+
+/*Home Page */
+	#canvas {
+		margin: 8em 0em 0em 0em;
+	}
+		#site-banner {
+			background: var(--accent-Color);
+			margin: 2em 0em 0em 0em;
+			width: 100%;
+			
+		}
+	
+		.user-title{
+			color: var(--main-Bg-Color);
+		}
+		
+		ef.title, .page-title{ 
+		    color: var(--primary-Color);
+		}
+		
+		
+	.res_image {
+		width: 100%;
+		height: 100%;
+	}
+	
+	.bottom-section {
+		background-color: var(--opacityBackground);
+		border-radius: 25px;
+	}
+		
+		#user-msg-section {
+			background: var(--accent-Color);
+			width: 100%;
+			margin: 0 0 5em 0;
+			padding: 6px;
+		}
+		
+		#site-info-section {
+			padding: 0em 2em 2em 2em;
+		}
+		
+			.sub-title{
+				color: var(--accent-Color);
+				padding-bottom: 0.5em;
+			}
+			
+			#ab-title, #desc-left {
+				text-align: left;
+			}
+			
+			.sub-desc {
+				color: var(--accent-Color);
+			}
+			
+				.author-space li {
+					font-size: 15pt;
+					border: 2px solid var(--accent-Color);
+					border-radius: 25px;
+					width: 4.5em;
+					margin: 0em 2em;
+					transition: background-color 1s ease-in-out, color 1s ease-in-out;
+					list-style-type: none;
+				}
+				
+				.author-space li:hover {
+					background-color: var(--accent-Color);
+					color: white;
+				}
+
+/*Login & Registeration Form Page*/
+
+  .page-title {
+	margin: 0em 0em;
+	font-size: 26pt;
+	color: var(--accent-Color);	
+  }	 
+  
+    .form-style {
+			border-radius: 5px;
+			background: var(--opacityBackground);
+			box-shadow: 1px 1px 1px 1px darkgray;
+			margin: 3em ; 
+			padding: 1px 1px;
+		    color: var(--accent-Color);
+		    width: 50%;
+		    height: fit-content;
+       	}
+		
+		input[type=text], input[type=password] {
+			width: 50%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			border-radius:15px;
+			outline: none;
+		}
+		
+		input[type=text]:focus {
+			border: 1px solid var(--primary-Color);
+			color: var(--primary-Color);
+		}
+		
+		button, button.btn-crud {
+			background-color: none;
+			color: var(--accent-Color);
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			cursor: pointer;
+			width: 100;
+			border: var(--accent-Color) 2px solid;
+			border-radius: 3px;
+			transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; 
+		}
+		button:hover, .btn-crud:hover{
+			background-color: var(--accent-Color);
+			color: var(--main-Bg-Color);
+		}
+		.register-btn {
+			width: auto;
+			padding: 12px 18px;
+			background-color: tomato;
+			margin-left: 10px;
+		}
+		.imgcontainer{
+			text-align: center;
+			margin: 1em auto;
+		}
+		img.avatar{
+			width: 40%;
+			max-width:300px;
+			border-radius: 50%;
+		}
+		span.psw{
+			float: right;
+		}
+		
+		  .psw a {
+			text-decoration: none;
+		  }
+		  
+		.fieldError{
+			color:red;
+		}
+		
+		button.register-btn{
+			margin-left: 127px;
+			margin-bottom: 10px;
+	    }
+/*Confirmation Pages*/
+
+	.conf-title{
+		color: mediumslateblue;
+	}
+
+/*Main Template Section*/
+  #thy-temp {
+	 width: 100%;
+	 height: auto;
+	 margin:0px;
+  }	
+  		
+/*Footer Section*/
+  .footer-section {
+	 background-color: var(--accent-Color);
+	 color: white;
+	 padding: 3px;
+	 position: absolute;
+	 bottom: 0;
+	 width: 100%;
+}
+
+/*CRUD Pages*/
+.table-primary th{
+	background-color: var(--primary-Color);	
+} 

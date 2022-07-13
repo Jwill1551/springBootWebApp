@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
+	<head>
+	 <title> Add A Product! </title>
+	</head>
+	<body>
+		<div layout:fragment="content">
+			<h2 class="page-title mt-3">Please Add A Product:</h2>
+			
+			<form class="form-style py-3" action-"#" th:action="@{/products/addProduct}" th:object="${productModel}" method="POST">
+				<div class="container">
+					<label for="vacationName"><b>Vacation Name: </b></label>
+					<input type="text" thfield="*{vacationName}" placeholder="Name" name="vacationName" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('vacationName')}" th:errors="*{vacationName}">Vacation name Error</p>
+					</div>
+					
+					<label for="startDate"><b>Start Date: </b></label>
+					<input type="date" th:field="*{startDate}"  name="startDate" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('startDate')}" th:errors="*{startDate}">Start date Error</p>
+					</div>
+					
+					<label for="tripLength"><b>Trip Length: </b></label>
+					<input type="text" th:field="*{tripLength}" placeholder="Ex: 32" name="tripLength" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('tripLength')}" th:errors="*{tripLength}">Trip length Error</p>
+					</div>
+					
+					<label for="photo"><b>Photo: </b></label>
+					<input type="text" th:field="*{photo}" placeholder="Ex: photo.jpg" name="photo" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('photo')}" th:errors="*{photo}">Photo Error</p>
+					</div>
+					
+					<label for="location"><b>Location: </b></label>
+					<input type="text" th:field="*{location}" placeholder="Ex: Hawaii, Utah, Arizona" name="location" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('location')}" th:errors="*{firstName}">Location Error</p>
+					</div>
+
+					<label for="cost"><b>Cost: </b></label>
+					<input type="text" th:field="*{cost}" placeholder="Ex: 100.00" name="cost" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('cost')}" th:errors="*{cost}">Cost Error</p>
+					</div>
+					
+					<label for="description"><b>Description: </b></label>
+					<input type="text" th:field="*{description}" placeholder="Ex: Skydiving trip" name="description" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('description')}" th:errors="*{description}">Description Error</p>
+					</div>
+
+					<button type="submit">Add Product</button>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

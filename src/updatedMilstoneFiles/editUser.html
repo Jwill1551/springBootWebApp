@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate">
+
+<head> </head>
+
+<body>
+	<div layout:fragment="content">
+		<form action="#" th:action="@{/user/doUpdate}" th:object="${userModel}" method="post">
+			<div class="container"> <input type="hidden" th:field="${userModel.id}" name="id">
+				<div class="input-group input-group-lg"> 
+				<span class="input-group-text" id="inputGroup-sizing-lg">Firstname</span> 
+				<input type="text" class="form-control" aria-label="Sizing example input"
+						aria-describedby="inputGroup-sizing-lg" th:field="*{userModel.firstName}" placeholder="Firstname "
+						name="Firstname" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{userModel.firstName}">Firstname Error</p>
+						</div>
+						</div>
+						<div class="input-group input-group-lg">  
+						<span class="input-group-text" id="inputGroup-sizing-lg">Lastname</span>  
+						<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="*{userModel.lastName}" placeholder = "Lastname" name="Lastname" required>  
+						<div class="fieldError">
+						<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{userModel.lastName}">Lastname Error</p>
+						</div>
+						</div>
+						<div class="input-group input-group-lg">  <span class="input-group-text" id="inputGroup-sizing-lg">Price</span>
+						  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="*{userModel.email}" placeholder = "Email" name="Email" required>
+						    <div class="fieldError">
+						    <p th:if="${#fields.hasErrors('email')}" th:errors="*{userModel.email}">Email Error</p>
+						    </div>
+						    </div>
+						    <div class="input-group input-group-lg">  
+						    <span class="input-group-text" id="inputGroup-sizing-lg">Phone Number</span>  
+						    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="*{userModel.phoneNumber}" placeholder = "phoneNumber" name="phoneNumber" required>  
+						    <div class="fieldError">
+						    <p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{userModel.phoneNumber}">Phone Number Error</p>
+						    </div>
+						    </div>
+						    <div class="input-group input-group-lg">  
+						    <span class="input-group-text" id="inputGroup-sizing-lg">Username</span>  
+						    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="*{userModel.username}" placeholder = "username" name="username" required>  
+						    <div class="fieldError">
+						    <p th:if="${#fields.hasErrors('username')}" th:errors="*{userModel.username}">Username Error</p>
+						    </div>
+						    </div>
+						    <div class="input-group input-group-lg">  
+						    <span class="input-group-text" id="inputGroup-sizing-lg">Password</span>  
+						    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="*{userModel.password}" placeholder = "password" name="password" required>  
+						    <div class="fieldError">
+						    <p th:if="${#fields.hasErrors('password')}" th:errors="*{userModel.password}">Password Error</p>
+						    </div>
+						    </div>
+						    <button type="submit" class="btn btn-crud">Update</button>    
+						</div>   
+						<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
+						<div th:each="err : ${#fields.errors('*')}">
+						<span th:text="${err}" class="fieldError"></span>
+				</div>           
+			</div>     
+		</form>
+	</div>
+</body>
+</html>

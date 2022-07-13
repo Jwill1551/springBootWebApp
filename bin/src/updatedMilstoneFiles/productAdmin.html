@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate">
+
+<head> </head>
+
+<body>
+	<div layout:fragment="content" class="container-xl">
+		<h2 class="page-title">Product Admin Controls:</h2>
+		
+		<table class="table table-striped">
+			<tr class="table-primary">
+				<th>Vacation ID</th>
+				<th>Vacation Name</th>
+				<th>Start Date</th>
+				<th>Trip Length</th>
+				<th>Photo</th>
+				<th>Location</th>
+				<th>Description</th>
+				<th>Cost</th>
+			</tr>
+			<tr th:each="Product : ${product}">
+				<td th:text="${product.vacationId}"></td>
+				<td th:text="${product.vacationName}"></td>
+				<td th:text="${product.startDate}"></td>
+				<td th:text="${product.tripLength}"></td>
+				<td th:text="${product.photo}"></td>
+				<td th:text="${product.location}"></td>
+				<td th:text="${product.description}"></td>
+				<td th:text="${product.cost}"></td>
+				<td>
+					<form action="#" th:action="@{/product/deleteProduct/}" th:object="${product}" method="post"> <input name="VacationId"
+							type="hidden" th:value="${product.vacationId}"> <input name="VacationName" type="hidden"
+							th:value="${product.vacationName}"> <input name="StartDate" type="hidden"
+							th:value="${product.startDate}"><input name="TripLength" type="hidden"
+							th:value="${product.tripLength}"><input name="photo" type="hidden"
+							th:value="${product.photo}"><input name="location" type="hidden"
+							th:value="${product.location}"><input name="description" type="hidden"
+							th:value="${product.description}"><input name="cost" type="hidden"
+							th:value="${product.cost}"> <button class="btn btn-danger" type="submit"
+							name="deleteItem">Delete</button></form>
+				</td>
+				<td>
+					<form action="#" th:action="@{/product/updateProduct}" th:object="${product}" method="post"> <input name="VacationId"
+							type="hidden" th:value="${product.vacationId}"> <input name="VacationName" type="hidden"
+							th:value="${product.vacationName}"> <input name="StartDate" type="hidden"
+							th:value="${product.startDate}"><input name="TripLength" type="hidden"
+							th:value="${product.tripLength}"><input name="photo" type="hidden"
+							th:value="${product.photo}"><input name="location" type="hidden"
+							th:value="${product.location}"><input name="description" type="hidden"
+							th:value="${product.description}"><input name="cost" type="hidden"
+							th:value="${product.cost}"> <button class="btn btn-crud" type="submit"
+							name="editItem">Edit</button></form>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>

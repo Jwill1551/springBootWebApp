@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate">
+
+<head> </head>
+
+<body>
+	<div layout:fragment="content">
+		<form action="#" th:action="@{/products/doUpdateProduct}" th:object="${productModel}" method="post">
+			<div class="container"> <input type="hidden" th:field="${productModel.vacationId}" name="id">
+				<div class="input-group input-group-lg"> 
+				<span class="input-group-text" id="inputGroup-sizing-lg">Vacation Name</span> 
+				<input type="text" class="form-control" aria-label="Sizing example input"
+						aria-describedby="inputGroup-sizing-lg" th:field="${productModel.vacationName}" placeholder="Vacation "
+						name="vacationName" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('vacationName')}" th:errors="${productModel.vacationName}">Vacation Name Error</p>
+						</div>
+						</div>
+						<div class="input-group input-group-lg">  
+						<span class="input-group-text" id="inputGroup-sizing-lg">Start Date</span>  
+						<input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="${productModel.startDate}" placeholder = "StartDate" name="startDate" required>  
+						<div class="fieldError">
+						<p th:if="${#fields.hasErrors('startDate')}" th:errors="${productModel.startDate}">Start Date Error</p>
+						</div>
+						</div>
+						<div class="input-group input-group-lg">  <span class="input-group-text" id="inputGroup-sizing-lg">Trip Length</span>
+						  <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="${productModel.tripLength}" placeholder = "TripLength" name="tripLength" required>
+						    <div class="fieldError">
+						    <p th:if="${#fields.hasErrors('tripLength')}" th:errors="${productModel.tripLength}">Trip Length Error</p>
+						    </div>
+						    </div>
+						    <div class="input-group input-group-lg">  
+						    <span class="input-group-text" id="inputGroup-sizing-lg">Photo</span>  
+						    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="${productModel.photo}" placeholder = "photo" name="photo" required>  
+						    <div class="fieldError">
+						    <p th:if="${#fields.hasErrors('photo')}" th:errors="${productModel.photo}">Photo Error</p>
+						    </div>
+						    </div>
+						    <div class="input-group input-group-lg">  
+						    <span class="input-group-text" id="inputGroup-sizing-lg">Location</span>  
+						    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="${productModel.location}" placeholder = "location" name="location" required>  
+						    <div class="fieldError">
+						    <p th:if="${#fields.hasErrors('location')}" th:errors="${productModel.location}">Location Error</p>
+						    </div>
+						    </div>
+						    <div class="input-group input-group-lg">  
+						    <span class="input-group-text" id="inputGroup-sizing-lg">Description</span>  
+						    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="${productModel.description}" placeholder = "description" name="description" required>  
+						    <div class="fieldError">
+						    <p th:if="${#fields.hasErrors('description')}" th:errors="${productModel.description}">Description Error</p>
+						    </div>
+						    </div>
+						    <div class="input-group input-group-lg">  
+						    <span class="input-group-text" id="inputGroup-sizing-lg">Cost</span>  
+						    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" th:field="${productModel.cost}" placeholder = "cost" name="cost" required>  
+						    <div class="fieldError">
+						    <p th:if="${#fields.hasErrors('cost')}" th:errors="${productModel.cost}">Cost Error</p>
+						    </div>
+						    </div>
+						    <button type="submit" class="btn btn-crid">Update</button>    
+						</div>   
+						<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
+						<div th:each="err : ${#fields.errors('*')}">
+						<span th:text="${err}" class="fieldError"></span>
+				</div>           
+			</div>     
+		</form>
+	</div>
+</body>
+</html>

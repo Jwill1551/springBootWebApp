@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
+<head>
+<style>
+* {font-family: Arial;}
+h3 {color:blue;}
+p {font-style : italic;}
+table, th, td {  border: 1px solid black;   border-collapse: collapse;padding:2px;}
+</style> 
+</head>
+
+<body>
+	<div layout:fragment="content" class="container-xl">
+	<h1 th:text="${title}"></h1> 
+	<h3 th:text="${searchModel.searchTerm}"></h3>
+	<table>
+		<tr>
+			<th>ID</th>
+			<th>Vacation Name</th>
+			<th>Start Date</th>
+			<th>Trip Length</th>
+			<th>Photo</th>
+			<th>Location</th>
+			<th>Description</th>
+			<th>Cost</th>
+		</tr>
+		<tr th:each="product : ${products}">
+			<td th:text="${product.vacationId}"></td>
+			<td th:text="${product.vacationName}"></td>
+			<td th:text="${product.startDate}"></td>
+			<td th:text="${product.tripLength}"></td>
+			<td th:text="${product.photo}"></td>
+			<td th:text="${product.location}"></td>
+			<td th:text="${product.description}"></td>
+			<td th:text="${product.cost}"></td>
+		</tr> 
+	</table>
+	</div>
+</body>
+</html>

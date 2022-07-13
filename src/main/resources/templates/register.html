@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="layouts/defaultTemplate">
+	<head>
+		<title>Please sign up to be a user! 📝</title>
+	</head>
+	<body>
+		<div layout:fragment="content">
+		<h2 class="page-title mt-3">Please Register Below:</h2>
+			<form class="form-style" action-"#" th:action="@{/doRegister}" th:object="${registrationModel}" method="POST">
+				<div class="container">
+					<label for="fname"><b>First Name</b></label>
+					<input type="text" th:field="*{firstName}" placeholder="Enter first name" name="fname" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First name Error</p>
+					</div>
+					
+					<label for="lname"><b>Last Name</b></label>
+					<input type="text" th:field="*{lastName}" placeholder="Enter last name" name="lname" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last name Error</p>
+					</div>
+					
+					<label for="email"><b>Email</b></label>
+					<input type="text" th:field="*{email}" placeholder="Enter email" name="email" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</p>
+					</div>
+					
+					<label for="phone"><b>Phone Number</b></label>
+					<input type="text" th:field="*{phoneNumber}" placeholder="Enter phone number" name="phone" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}">Last name Error</p>
+					</div>
+				
+					<label for="uname"><b>Username</b></label>
+					<input type="text" th:field="*{username}" placeholder="Enter username" name="uname" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username Error</p>
+					</div>
+					
+					<label for="psw"><b>Password</b></label>
+					<input type="text" th:field="*{password}" placeholder="Enter password" name="psw" required>
+					<div class="fieldError">
+						<p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</p>
+					</div>
+					<button type="submit">Register</button>
+				</div>
+				
+				<div th:if="${#fields.hasErrors('*')}">List of Errors</div>
+				<div th:each="err: ${#fields.errors('*')}">
+					<span th:text="${err}" class="fieldError"></span>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

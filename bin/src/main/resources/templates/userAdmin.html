@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="layouts/defaultTemplate">
+
+<head> </head>
+
+<body>
+	<div layout:fragment="content" class="container-xl">
+		<h2 class="page-title">User Admin Controls:</h2>
+		
+		<table class="table table-striped">
+			<tr class="table-primary">
+				<th>ID</th>
+				<th>First</th>
+				<th>Last</th>
+				<th>Email</th>
+				<th>User</th>
+				<th>Password</th>
+				<th>Delete</th>
+				<th>Edit</th>
+			</tr>
+			<tr th:each="user : ${users}">
+				<td th:text="${user.id}"></td>
+				<td th:text="${user.firstName}"></td>
+				<td th:text="${user.lastName}"></td>
+				<td th:text="${user.email}"></td>
+				<td th:text="${user.username}"></td>
+				<td th:text="${user.password}"></td>
+				<td>
+					<form action="#" th:action="@{/deleteUser}" th:object="${user}" method="post"> <input name="id"
+							type="hidden" th:value="${user.id}"> <input name="Firstname" type="hidden"
+							th:value="${user.firstName}"> <input name="Lastname" type="hidden"
+							th:value="${user.lastName}"><input name="email" type="hidden"
+							th:value="${user.email}"><input name="phoneNumber" type="hidden"
+							th:value="${user.phoneNumber}">
+							<input name="username" type="hidden"
+							th:value="${user.username}">
+							<input name="password" type="hidden"
+							th:value="${user.password}">
+							<button class="btn btn-danger" type="submit"
+							name="deleteItem">Delete</button></form>
+				</td>
+				<td>
+					<form action="#" th:action="@{/updateUser}" th:object="${user}" method="get"> <input name="id"
+							type="hidden" th:value="${user.id}"> <input name="firstName" type="hidden"
+							th:value="${user.firstName}"> <input name="lastName" type="hidden"
+							th:value="${user.lastName}"><input name="email" type="hidden"
+							th:value="${user.email}"><input name="phoneNumber" type="hidden"
+							th:value="${user.phoneNumber}">
+							<input name="username" type="hidden"
+							th:value="${user.username}">
+							<input name="password" type="hidden"
+							th:value="${user.password}"><button class="btn btn-crud" type="submit"
+							name="editItem">Edit</button></form>
+				</td>
+			</tr>
+		</table>
+	</div>
+</body>
+
+</html>
