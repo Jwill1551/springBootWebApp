@@ -21,13 +21,12 @@ import com.gcu.model.SearchModel;
 import com.gcu.model.UserModel;
 
 @Controller
-@RequestMapping("/")
 public class UserController 
 {
 	@Autowired
 	private UsersBusinessInterface service;
 	
-	@GetMapping("/home")
+	@GetMapping("/")
 	public String homeDisplay()
 	{
 		return "home";
